@@ -10,3 +10,11 @@ report.pdf
 report.toc
 
 *.gnuplot
+
+.ropeproject/objectdb
+
+.ropeproject/history
+
+.ropeproject/globalnames
+
+.ropeproject/config.py
