@@ -4,11 +4,11 @@
 \usepackage[swedish]{babel}
 \usepackage{amssymb, graphicx, fancyhdr}
 \usepackage{hyperref}
-\usepackage{tikz}
+\usepackage{pgf, tikz}
+\usepackage{pgfplots}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{amsmath}
-\usepackage{multirow}
 \usepackage{mathtools}
 \addtolength{\textheight}{20mm}
 \addtolength{\voffset}{-5mm}
@@ -93,7 +93,7 @@ Kielbasa cow short loin jowl doner jerky corned beef short ribs. Meatloaf t-bone
 
 	\pagenumbering{arabic}
 
-	\setlength{\parindent}{0pt}
+	\setlength{\parindent}{10pt}
 	\setlength{\parskip}{10pt}
 	
 
@@ -101,8 +101,28 @@ Kielbasa cow short loin jowl doner jerky corned beef short ribs. Meatloaf t-bone
 	\section{Inledning}
 	\section{Metod}
 	\section{Resultat}
-    \begin{tabular}{llll}
+    \begin{tikzpicture}[domain=0:4]
+    \draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
+    \draw[->] (-0.2,0) -- (4.2,0) node[right] {$x$};
+    \draw[->] (0,-1.2) -- (0,4.2) node[above] {$f(x)$};
+    \draw[color=red] plot[id=x] function{x} 
+        node[right] {$f(x) =x$};
+    \draw[color=blue] plot[id=sin] function{sin(x)} 
+        node[right] {$f(x) = \sin x$};
+    \draw[color=orange] plot[id=exp] function{0.05*exp(x)} 
+        node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
+    \end{tikzpicture}\\
 
+    \begin{tikzpicture}
+        \begin{axis}
+            \addplot+[domain=0:360]{sin(x)};
+        \end{axis}
+    \end{tikzpicture}
+
+    \begin{tabular}{cccc}
+        \hline
+        Tid (s) & Längd (m) & Höjd (m) & Bredd (m)\\
+        \hline
         0.362 & 1.200 & 0.005 & 0.020\\
         0.305 & 1.100 & 0.005 & 0.020\\
         0.254 & 1.000 & 0.005 & 0.020\\
@@ -112,7 +132,24 @@ Kielbasa cow short loin jowl doner jerky corned beef short ribs. Meatloaf t-bone
         0.094 & 0.600 & 0.005 & 0.020\\
         0.066 & 0.500 & 0.005 & 0.020\\
         0.083 & 0.400 & 0.005 & 0.020\\
-        
+    \end{tabular}\\
+    \begin{tabular}{cccc}
+        \hline
+        Tid (s) & Längd (m) & Höjd (m) & Bredd (m)\\
+        \hline
+        0.255 & 1.000 & 0.005 & 0.020\\
+        0.259 & 1.000 & 0.005 & 0.025\\
+        0.250 & 1.000 & 0.005 & 0.030\\
+        0.259 & 1.000 & 0.005 & 0.040\\
+    \end{tabular}\\
+    \begin{tabular}{cccc}
+        \hline
+        Tid (s) & Längd (m) & Höjd (m) & Bredd (m)\\
+        \hline
+        0.421 & 1.000 & 0.003 & 0.020\\
+        0.254 & 1.000 & 0.005 & 0.020\\
+        0.215 & 1.000 & 0.006 & 0.020\\
+        0.162 & 1.000 & 0.008 & 0.020\\
     \end{tabular}
 	\section{Analys}
     \section{Diskussion}

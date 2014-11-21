@@ -8,3 +8,5 @@ report.out
 report.pdf
 
 report.toc
+
+*.gnuplot
