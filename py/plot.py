@@ -15,7 +15,7 @@ def time(l, h, e, roh):
 
 
 l = np.linspace(0, 1.4, 90)  # list of lengths
-h = np.linspace(0, .01, 90)  # list of heights
+h = np.linspace(0.001, .01, 90)  # list of heights
 
 # Linearization tables
 ln_l = [-0.693147181,
@@ -72,13 +72,10 @@ pl.savefig("../png/ln_t_ln_l.png")
 
 # plot Time as function of Height
 pl.figure()
-pl.plot(h, time(1, h, 200 * 10 ** 9, 7761), 'b-', label="5mm")
+# pl.plot(h, time(1, h, 200 * 10 ** 9, 7761), 'b-', label="5mm")
 
 # plot meassured points
-pl.plot(.003, .421, 'ro')
-pl.plot(.005, .254, 'ro')
-pl.plot(.006, .215, 'ro')
-pl.plot(.008, .162, 'ro')
+pl.plot([.003, .005, .006, .008], [.421, .254, .215, .165], 'ro')
 
 pl.xlabel("h(m)")
 pl.ylabel("T(s)")
