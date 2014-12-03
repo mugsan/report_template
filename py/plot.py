@@ -41,7 +41,10 @@ ln_t = [-2.7181,
 # roh = 7761 kg/m^3 (steel)
 pl.figure()
 # plot time(l)
-pl.plot(l, time(l, .005, 200 * 10 ** 9, 7761), 'b-', label="5mm")
+pl.plot(l,
+        time(l, .005, 200 * 10 ** 9, 7761),
+        'b-',
+        label=r'$T = 6.45\cdot \frac{l^2\sqrt{\rho}}{h\sqrt{E}}$')
 # plot meassured points
 pl.plot([0.5, 0.6, 0.75, 0.8, 0.9, 1, 1.1, 1.2],
         [0.066, 0.094, 0.145, 0.164, 0.207, 0.254, 0.305, 0.362],
