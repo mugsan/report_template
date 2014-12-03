@@ -44,14 +44,14 @@ pl.figure()
 pl.plot(l,
         time(l, .005, 200 * 10 ** 9, 7761),
         'b-',
-        label=r'$T = 6.45\cdot \frac{l^2\sqrt{\rho}}{h\sqrt{E}}$')
+        label=r'$T(l) = 6.45\cdot\frac{l^2\sqrt{7761kg/m^3}}{5mm\cdot\sqrt{200GPa}}$')
+
 # plot meassured points
 pl.plot([0.5, 0.6, 0.75, 0.8, 0.9, 1, 1.1, 1.2],
         [0.066, 0.094, 0.145, 0.164, 0.207, 0.254, 0.305, 0.362],
-        'ro',
-        label="5mm")
+        'ro')
 
-pl.xlabel("L(m)")
+pl.xlabel("l(m)")
 pl.ylabel("T(s)")
 pl.legend(loc='upper left')
 pl.grid(True)
@@ -72,7 +72,10 @@ pl.savefig("../png/ln_t_ln_l.png")
 
 # plot Time as function of Height
 pl.figure()
-pl.plot(h, time(1, h, 200 * 10 ** 9, 7761), 'b-', label="5mm")
+pl.plot(h,
+        time(1, h, 200 * 10 ** 9, 7761),
+        'b-',
+        label=r'$T(h) = 6.45\cdot\frac{\sqrt{7761kg/m^3}}{h\cdot\sqrt{200GPa}}$')
 
 # plot meassured points
 pl.plot([.003, .005, .006, .008],
@@ -81,17 +84,18 @@ pl.plot([.003, .005, .006, .008],
 
 pl.xlabel("h(m)")
 pl.ylabel("T(s)")
-pl.legend(loc='upper left')
+pl.legend(loc='upper right')
 pl.grid(True)
 pl.savefig("../png/height.png")
 
 # Different materials.
 pl.figure()
+l = np.linspace(.8, 1.2, 90)
 pl.plot(l, time(l, .005, 69 * 10 ** 9, 2747.6), 'b-', label="Aluminum")
 pl.plot(1, .252, 'bo')
 pl.plot(l, time(l, .008, 100 * 10 ** 9, 8487.5), 'g-', label="Brass")
 pl.plot(1, .232, 'go')
-pl.xlabel("L(m)")
+pl.xlabel("l(m)")
 pl.ylabel("T(s)")
 pl.legend(loc='upper left')
 pl.grid(True)
