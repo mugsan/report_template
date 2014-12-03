@@ -72,10 +72,12 @@ pl.savefig("../png/ln_t_ln_l.png")
 
 # plot Time as function of Height
 pl.figure()
-# pl.plot(h, time(1, h, 200 * 10 ** 9, 7761), 'b-', label="5mm")
+pl.plot(h, time(1, h, 200 * 10 ** 9, 7761), 'b-', label="5mm")
 
 # plot meassured points
-pl.plot([.003, .005, .006, .008], [.421, .254, .215, .165], 'ro')
+pl.plot([.003, .005, .006, .008],
+        [.421, .254, .215, .165],
+        'ro')
 
 pl.xlabel("h(m)")
 pl.ylabel("T(s)")
