@@ -11,6 +11,8 @@ report.toc
 
 *.gnuplot
 
+*.png
+
 .ropeproject/objectdb
 
 .ropeproject/history
