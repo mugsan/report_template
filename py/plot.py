@@ -3,19 +3,19 @@ import pylab as pl
 import math as m
 
 
-def time(l, h, e, roh):
+def time(l, d, e, roh):
     '''
     @param l length in m
-    @param h height in m
+    @param d height in m
     @param e e-module in Pa
     @param roh density in kg / m^3
     '''
     const = 6.447
-    return const * (l**2 * m.sqrt(roh)) / (h * m.sqrt(e))
+    return const * (l**2 * m.sqrt(roh)) / (d * m.sqrt(e))
 
 
 l = np.linspace(0, 1.4, 90)  # list of lengths
-h = np.linspace(0.001, .01, 90)  # list of heights
+d = np.linspace(0.001, .01, 90)  # list of heights
 
 # Linearization tables
 ln_l = [-0.693147181,
@@ -72,17 +72,17 @@ pl.savefig("../png/ln_t_ln_l.png")
 
 # plot Time as function of Height
 pl.figure()
-pl.plot(h,
-        time(1, h, 200 * 10 ** 9, 7761),
+pl.plot(d,
+        time(1, d, 200 * 10 ** 9, 7761),
         'b-',
-        label=r'$T(h) = 6.45\cdot\frac{\sqrt{7761kg/m^3}}{h\cdot\sqrt{200GPa}}$')
+        label=r'$T(d) = 6.45\cdot\frac{1m\cdot\sqrt{7761kg/m^3}}{d\cdot\sqrt{200GPa}}$')
 
 # plot meassured points
 pl.plot([.003, .005, .006, .008],
         [.421, .254, .215, .165],
         'ro')
 
-pl.xlabel("h(m)")
+pl.xlabel("d(m)")
 pl.ylabel("T(s)")
 pl.legend(loc='upper right')
 pl.grid(True)
@@ -90,11 +90,13 @@ pl.savefig("../png/height.png")
 
 # Different materials.
 pl.figure()
-l = np.linspace(.8, 1.2, 90)
+l = np.linspace(.98, 1.025, 100)
 pl.plot(l, time(l, .005, 69 * 10 ** 9, 2747.6), 'b-', label="Aluminum")
+pl.plot(l, time(l, .008, 102 * 10 ** 9, 8487.5), 'g-', label="Brass")
+pl.plot(l, time(l, .005, 200 * 10 ** 9, 7761), 'r-', label="Steel")
 pl.plot(1, .252, 'bo')
-pl.plot(l, time(l, .008, 100 * 10 ** 9, 8487.5), 'g-', label="Brass")
 pl.plot(1, .232, 'go')
+pl.plot(1, .254, 'ro')
 pl.xlabel("l(m)")
 pl.ylabel("T(s)")
 pl.legend(loc='upper left')

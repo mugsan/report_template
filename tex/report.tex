@@ -10,6 +10,7 @@
 \usepackage{color}
 \usepackage{amsmath}
 \usepackage{mathtools}
+\usepackage{float}
 \addtolength{\textheight}{20mm}
 \addtolength{\voffset}{-5mm}
 \renewcommand{\sectionmark}[1]{\markleft{#1}}
@@ -76,64 +77,83 @@
 
 	\pagenumbering{roman}
     \begin{abstract}
-        Bacon ipsum dolor amet short ribs chicken porchetta meatball jerky landjaeger ball tip. Biltong frankfurter ham hock, strip steak pork belly flank salami pig pancetta sirloin boudin ball tip swine. Rump picanha drumstick salami pancetta ham hock strip steak. Beef ribs porchetta shank, meatloaf swine chicken pork. Rump drumstick prosciutto sirloin.
-
-Pork belly capicola ball tip, shankle biltong porchetta hamburger tail. Capicola pork chop rump brisket, ham tongue corned beef prosciutto kielbasa pork short ribs flank frankfurter shankle. Kielbasa meatball ribeye spare ribs. Leberkas shank prosciutto spare ribs brisket porchetta pancetta pork boudin beef tail capicola fatback pork loin pig. Hamburger short loin tongue pastrami cupim ham shankle meatball drumstick kielbasa ball tip pork cow. Tongue bresaola ball tip rump filet mignon short ribs, alcatra tri-tip pig leberkas jowl. Fatback bacon jerky frankfurter.
-
-Doner filet mignon turducken beef pork loin cow meatball venison spare ribs bacon. Hamburger sausage ribeye turkey short ribs, venison landjaeger doner bacon cupim frankfurter salami meatball beef ribs pork chop. Landjaeger sausage venison t-bone shankle. Hamburger swine chicken pastrami bresaola, pork chop brisket cupim tail tenderloin turkey cow meatloaf.
-
-Brisket venison pork chop pig salami tongue ball tip pork belly. Pork fatback short ribs pork chop sirloin bacon doner brisket turducken ham hock. Chicken ribeye fatback beef ribs, landjaeger pork chop bresaola ball tip. Strip steak jowl frankfurter fatback alcatra.
-
-Kielbasa cow short loin jowl doner jerky corned beef short ribs. Meatloaf t-bone short loin short ribs cupim boudin cow chuck swine alcatra fatback. Tongue pork belly prosciutto filet mignon pork. Pork loin landjaeger tri-tip shank corned beef doner meatloaf ham swine strip steak jowl boudin venison chicken. Biltong frankfurter kevin, bacon turkey meatball filet mignon cupim turducken rump tenderloin hamburger beef short loin landjaeger. Doner salami pig jowl.
     \end{abstract}
     
     \tableofcontents
 	
 	\newpage
-
 	\pagenumbering{arabic}
 
 	\setlength{\parindent}{10pt}
 	\setlength{\parskip}{10pt}
-	
-
     
 	\section{Inledning}
 	\section{Metod}
-	\section{Resultat}
-    \begin{center}
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=.5]{../png/height.png}
-            \caption{Svängningstid beroende på tjocklek.}
-            \label{height}
-        \end{figure}
-        \begin{figure}
-            \centering
-            \includegraphics[scale=.5]{../png/length.png}
-            \caption{Svängningstid beroende på längd.}
-            \label{length}
-        \end{figure}
-        \begin{figure}
-            \centering
-            \includegraphics[scale=.5]{../png/plot.png}
-            \caption{Svängningstid beroende på material.}
-            \label{material}
-        \end{figure}
-        \begin{figure}
-            \centering
-            \includegraphics[scale=.5]{../png/ln_t_ln_l.png}
-            \caption{linearisering}
-            \label{linearisering}
-        \end{figure}
-    \end{center}
+    För att strukturera arbetet gjordes en planering av laborationen. Detta görs enligt en standardiserad metod som är vanlig i projekt som detta där samband ska tas fram.
+    \begin{enumerate}
+        \item Deifiniera Problemet.
+        \item Vad påverkar?
+        \item Planera mätningar.
+        \item Resultat Tabell.
+        \item Rita Figurer.
+        \item Analysera (Linjärisera).
+        \item Dimensionsanalys.
+    \end{enumerate}
 
-    \begin{table}
+Materialen som användes i laborationen: Ställning för balkar, fotocell, dosa för avläsning av fotocellens mätningar, balkar i fyra olika material samt olika dimensioner, måttband.
+
+ Fyra olika tester genomfördes för att kunna ta fram sambandet mellan period tiden och ändringen i längd, tjocklek, bredd och material.
+Mätningarna utfördes genom att man fäste balken som skulle testas i ställningen. Balken fästes bara i ena änden medans den andra änden var fri och kunde röra sig i vertikalled. I den fria änden placerades fotocellen för att kunna mäta balkens svängningstid. Fotocellen placerades så nära balkens ände som möjligt för att   I första testet användes endast en stålbalk. Det enda som ändrades i detta test var längden på balken.
+    \section{Analys}
+        \subsection{Variabellista}
+        \begin{table}[h]
+            \begin{tabular}{llll}
+
+            \textbf{Storhet} & \textbf{Symbol} & \textbf{Enhet} & \textbf{Grunddimension} \\ \hline
+            Pendeltid    & T    & s     & T         \\ \hline
+            Balklängd    & l    & m     & L         \\ \hline
+            Balktjocklek & h    & m     & L         \\ \hline
+            Balkbredd    & b    & m     & L         \\ \hline
+            Densitet     & $\rho$    & $kg/m^3$ & $M\cdot L^{-3}$     \\ \hline
+            E-modul      & E      & \footnotesize $kg/ms^2$    &                \\ \hline
+            \end{tabular}
+        \end{table} 
+        
+	\section{Resultat}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=.5]{../png/height.png}
+        \caption{Svängningstid beroende på tjocklek.}
+        \label{height}
+    \end{figure}
+
+    \begin{table}[H]
+        \caption{Undersökning av tjocklek.}
+        \begin{center}
+            \begin{tabular}{cccc}
+                \hline
+                Tid (s) & Längd (m) & Tjocklek (m) & Bredd (m)\\
+                \hline
+                0.421 & 1.000 & 0.003 & 0.020\\
+                0.254 & 1.000 & 0.005 & 0.020\\
+                0.215 & 1.000 & 0.006 & 0.020\\
+                0.162 & 1.000 & 0.008 & 0.020\\
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=.5]{../png/length.png}
+        \caption{Svängningstid beroende på längd.}
+        \label{length}
+    \end{figure}
+    \begin{table}[H]
         \caption{Undersökning av längd.}
         \begin{center}
             \begin{tabular}{cccc}
                 \hline
-                Tid (s) & Längd (m) & Höjd (m) & Bredd (m)\\
+                Tid (s) & Längd (m) & Tjocklek (m) & Bredd (m)\\
                 \hline
                 0.362 & 1.200 & 0.005 & 0.020\\
                 0.305 & 1.100 & 0.005 & 0.020\\
@@ -147,13 +167,26 @@ Kielbasa cow short loin jowl doner jerky corned beef short ribs. Meatloaf t-bone
             \end{tabular}
         \end{center}
     \end{table}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=.5]{../png/plot.png}
+        \caption{Svängningstid beroende på material.}
+        \label{material}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=.5]{../png/ln_t_ln_l.png}
+        \caption{linearisering}
+        \label{linearisering}
+    \end{figure}
+
 
     \begin{table}
-        \caption{Undersökning av längd.}
+        \caption{Undersökning av bredd.}
         \begin{center}
             \begin{tabular}{cccc}
                 \hline
-                Tid (s) & Längd (m) & Höjd (m) & Bredd (m)\\
+                Tid (s) & Längd (m) & Tjocklek (m) & Bredd (m)\\
                 \hline
                 0.255 & 1.000 & 0.005 & 0.020\\
                 0.259 & 1.000 & 0.005 & 0.025\\
@@ -163,22 +196,6 @@ Kielbasa cow short loin jowl doner jerky corned beef short ribs. Meatloaf t-bone
         \end{center}
     \end{table}
 
-    \begin{table}
-        \caption{Undersökning av längd.}
-        \begin{center}
-            \begin{tabular}{cccc}
-                \hline
-                Tid (s) & Längd (m) & Höjd (m) & Bredd (m)\\
-                \hline
-                0.421 & 1.000 & 0.003 & 0.020\\
-                0.254 & 1.000 & 0.005 & 0.020\\
-                0.215 & 1.000 & 0.006 & 0.020\\
-                0.162 & 1.000 & 0.008 & 0.020\\
-            \end{tabular}
-        \end{center}
-    \end{table}
-
-	\section{Analys}
     \section{Diskussion}
 
 
